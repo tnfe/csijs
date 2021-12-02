@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>T.E.S.T</title>
+    <style>
+      html,
+      body {
+        font-size: 14px;
+      }
+
+      .btn {
+        width: 150px;
+        height: 30px;
+        line-height: 30px;
+        background-color: #ff0000;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 15px;
+        margin: 50px auto;
+        text-align: center;
+      }
+
+      .title {
+        text-align: center;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h3 class="title">csijs前端日志系统，测试网页地址</h3>
+    <div class="show">
+      <div id="btn-error" class="btn">制造错误</div>
+      <div id="btn-report" class="btn">发送日志</div>
+    </div>
+  </body>
+  <script type="module">
+    import CSI from '../dist/csijs.es.js';
+    const csi = new CSI({
+      feID: 'csijs',
+      report: (lines) => {
+        console.log('### 自定义上报', lines);
+      }
+    });
+    console.log('### csi ', csi);
+    const btnError = document.getElementById('btn-error');
+    const btnReport = document.getElementById('btn-report');
+    btnError.addEventListener('click', () => {
+      test(123);
+    });
+    btnReport.addEventListener('click', () => {
+      csi.report();
+    });
+  </script>
+</html>
