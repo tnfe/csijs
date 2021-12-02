@@ -1,5 +1,5 @@
 <p align="center">
-<img src="./logo.png?raw=true" alt="logo" />
+<img src="https://raw.githubusercontent.com/tnfe/csijs/master/images/logo.png?raw=true" alt="logo" />
 </p>
 
 <br />
@@ -10,14 +10,14 @@
 它可以帮你快速重建犯罪现场。
     <br />
     <br />
-    <a href="./issues" target="_blank">反馈缺陷</a>
-    <a href="./issues" target="_blank">提交讨论</a>
+    <a href="https://github.com/tnfe/csijs/issues" target="_blank">反馈缺陷</a>
+    <a href="https://github.com/tnfe/csijs/issues" target="_blank">提交讨论</a>
   </p>
 </p>
 <div align="center">
-<a href="https://www.npmjs.com/ffcreator" target="_blank"><img src="https://img.shields.io/npm/l/ffcreator.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/csijs" target="_blank"><img src="https://img.shields.io/npm/l/ffcreator.svg" alt="Package License" /></a>
 <a href="https://github.com/prettier/prettier" target="_blank"><img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg" alt="Code Style"></a>
-<a href="./merge_requests" target="_blank"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs"/></a>
+<a href="https://github.com/tnfe/csijs/pulls" target="_blank"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs"/></a>
 <a href="https://nodejs.org" target="_blank"><img src="https://img.shields.io/badge/node-%3E%3D%208.0.0-brightgreen.svg" alt="Node Version" /></a>
 </div>
 <br />
@@ -37,10 +37,10 @@
 </table>
 
 <p align="center">
-<img src="./kefu.jpg" alt="kefu" />
+<img src="https://raw.githubusercontent.com/tnfe/csijs/master/images/kefu.jpg" alt="kefu" />
 </p>
 
-![](./demo.gif)
+![](https://raw.githubusercontent.com/tnfe/csijs/master/images/demo.gif)
 
 
 ## 一、快速开始
@@ -99,9 +99,9 @@ TNTWeb 团队会查看所有的 MR，我们会运行一些代码检查和测试�
 
 我们十分期待您的任何贡献，无论是修复错别字、提 Bug 还是提交一个新的特性。
 
-如果您使用过程中发现 Bug，请通过 [issues](/issues) 来提交并描述相关的问题，您也可以在这里查看其它的 issue，通过解决这些 issue 来贡献代码。
+如果您使用过程中发现 Bug，请通过 [issues](https://github.com/tnfe/csijs/issues) 来提交并描述相关的问题，您也可以在这里查看其它的 issue，通过解决这些 issue 来贡献代码。
 
-如果您是第一次贡献代码，请阅读 [CONTRIBUTING](./contribution) 了解我们的贡献流程，并提交 Merge Request 给我们。
+如果您是第一次贡献代码，请阅读 [CONTRIBUTING](https://github.com/tnfe/csijs/blob/master/contribution) 了解我们的贡献流程，并提交 Merge Request 给我们。
 
 ## 六、License
-The MIT License (MIT). Please see [License File](./LICENSE) for more information.
+The MIT License (MIT). Please see [License File](https://github.com/tnfe/csijs/blob/master/LICENSE) for more information.
