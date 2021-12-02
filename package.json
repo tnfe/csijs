@@ -1,6 +1,6 @@
 {
   "name": "csijs",
-  "version": "1.0.5",
+  "version": "1.0.8",
   "description": "csijs是一个前端日志系统，它将错误信息记录于本地localStorage中。无任何依赖、无入侵性。",
   "main": "./dist/csijs.es.js",
   "directories": {
@@ -13,10 +13,14 @@
     "lint": "eslint ./src",
     "lintfix": "eslint ./src --fix"
   },
-  "author": "ifli",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tnfe/csijs.git"
+  },
+  "author": "TNFE",
   "license": "ISC",
   "keywords": [
-    "csijs/felog/tntlog/log/frontendlog"
+    "csijs / felog / tntlog / log / frontendlog"
   ],
   "files": [
     "dist",

@@ -10,8 +10,6 @@
 它可以帮你快速重建犯罪现场。
     <br />
     <br />
-    <a href="https://github.com/tnfe/csijs/issues" target="_blank">反馈缺陷</a>
-    <a href="https://github.com/tnfe/csijs/issues" target="_blank">提交讨论</a>
   </p>
 </p>
 <div align="center">
