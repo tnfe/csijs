@@ -9,7 +9,6 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
-    'eslint-config-tencent',
   ],
   parserOptions: {
     ecmaVersion: 2020,

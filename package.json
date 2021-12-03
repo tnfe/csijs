@@ -1,6 +1,6 @@
 {
   "name": "csijs",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "csijs是一个前端日志系统，它将错误信息记录于本地localStorage中。无任何依赖、无入侵性。",
   "main": "./dist/csijs.es.js",
   "directories": {
@@ -34,7 +34,6 @@
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-commonjs": "^18.1.0",
     "@rollup/plugin-node-resolve": "^13.0.0",
-    "eslint-config-tencent": "^1.0.2",
     "eslint": "^7.26.0",
     "eslint-plugin-prettier": "^3.4.0",
     "rollup": "^2.47.0",
