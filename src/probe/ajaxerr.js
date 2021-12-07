@@ -7,9 +7,9 @@ const AjaxErr = function (forms) {
 AjaxErr.prototype.probe = function () {
   const that = this;
   const { open } = XMLHttpRequest.prototype;
-  XMLHttpRequest.prototype.open = (...args) => {
-    that.addListener(this, args);
-    open.apply(this, args);
+  XMLHttpRequest.prototype.open = function() {
+    that.addListener(this, arguments);
+    open.apply(this, arguments);
   };
 };
 
