@@ -17,30 +17,31 @@ AjaxErr.prototype.addListener = function (xhr, args) {
   if (xhrs.indexOf(xhr) >= 0) return;
   xhrs.push(xhr);
 
+  const that = this;
   const { onloadend } = xhr;
   const { ontimeout } = xhr;
 
-  xhr.onloadend = (...params) => {
+  xhr.onloadend = function (...params) {
     const status = `${xhr.status}`;
     if (!/^2[0-9]{1,3}/ig.test(status) && status !== '0') {
-      this.forms.addLine('ERROR', {
+      that.forms.addLine('ERROR', {
         etype: 'ajax error',
         msg: `status:${xhr.status}`,
         js: args.join(' :'),
       });
 
-      onloadend && onloadend.apply(this, params);
+      onloadend && onloadend.apply(xhr, params);
     }
   };
 
-  xhr.ontimeout = (...params) => {
-    this.forms.addLine('ERROR', {
+  xhr.ontimeout = function (...params) {
+    that.forms.addLine('ERROR', {
       etype: 'ajax error',
       msg: `timeout ${xhr.status}`,
       js: args.join(' :'),
     });
 
-    ontimeout && ontimeout.apply(this, params);
+    ontimeout && ontimeout.apply(xhr, params);
   };
 };
 

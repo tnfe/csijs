@@ -42,6 +42,7 @@ class CSI {
     try {
       this.opts = opts;
       const formObj = new Forms(opts.feID);
+      this.forms = formObj;
       (new Panel(this)).init();
       (new WinErr(formObj)).probe();
       (new AjaxErr(formObj)).probe();
@@ -55,6 +56,7 @@ class CSI {
   // 自定义错误
   probe(msg) {
     if (letIE9()) return;
+    if (!this.forms) return;
     this.forms.addLine('ERROR', {
       etype: 'custom error',
       msg,
@@ -64,6 +66,7 @@ class CSI {
   // 数据上报
   report() {
     if (letIE9()) return;
+    if (!this.opts || !this.opts.report) return;
     const lines = readLines();
     if (arrIsNull(lines)) return;
     this.opts.report(lines);

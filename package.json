@@ -1,6 +1,6 @@
 {
-  "name": "csijs",
-  "version": "1.0.10",
+  "name": "csilog",
+  "version": "2.0.1",
   "description": "csijs是一个前端日志系统，它将错误信息记录于本地localStorage中。无任何依赖、无入侵性。",
   "main": "./dist/csijs.es.js",
   "directories": {
@@ -41,6 +41,5 @@
     "rollup-plugin-terser": "^7.0.2"
   },
   "dependencies": {
-    "excellentexport": "^3.7.0"
   }
 }

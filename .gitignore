@@ -21,3 +21,5 @@ node_modules
 
 # build output
 dist
+
+yarn.lock

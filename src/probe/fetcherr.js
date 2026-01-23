@@ -3,8 +3,9 @@ const FetchErr = function (forms) {
 };
 FetchErr.prototype.probe = function () {
   if (!window.fetch) return;
+  const that = this;
   const originFetch = window.fetch;
-  window.fetch = (input, initObject) => {
+  window.fetch = function (input, initObject) {
     let method = 'GET';
     let url = input || '';
     if (typeof input === 'string') {
@@ -18,7 +19,7 @@ FetchErr.prototype.probe = function () {
       .then((resp) => {
         const status = `${resp.status}`;
         if (!/^2[0-9]{1,3}/gi.test(status) && +status !== 0) {
-          this.forms.addLine('ERROR', {
+          that.forms.addLine('ERROR', {
             etype: 'fetch error',
             msg: `status:${resp.status}`,
             js: `${method} :${url}`,
@@ -33,7 +34,7 @@ FetchErr.prototype.probe = function () {
         } catch (e) {
           msg = err && err.message ? err.message : err;
         }
-        this.forms.addLine('ERROR', {
+        that.forms.addLine('ERROR', {
           etype: 'fetch error',
           msg,
           js: `${method} :${url}`,

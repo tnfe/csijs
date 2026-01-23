@@ -1,4 +1,25 @@
 let composeUserAgent;
+
+// ////////////////////////////////////////////////////////////////
+//
+//      Device 对象定义（需要在 detect 函数之前定义）
+//
+// ////////////////////////////////////////////////////////////////
+export const Device = {
+  os: {
+    name: 'unknow',
+    version: '0.0.0',
+  },
+  platform: {
+    name: 'unknow',
+    version: '0.0.0',
+  },
+  browser: {
+    name: 'unknow',
+    version: '0.0.0',
+  },
+};
+
 // ////////////////////////////////////////////////////////////////
 //
 //      浏览器检测 http://www.bkjia.com/Javascript/1153785.html
@@ -109,7 +130,7 @@ const detect = (type, expression) => {
 
     if (result === true) {
       break;
-    } else if (toString(result) === '[object String]') {
+    } else if (typeIs(result, 'String') || typeof result === 'string') {
       if (getLocalUserAgent().indexOf(result) !== -1) {
         break;
       }
@@ -170,19 +191,4 @@ export const getUserAgent = (type) => {
   if (type === 'all' || type === 'full') return getLocalUserAgent();
   if (type !== undefined) return Device[type].name;
   return `${Device.os.name}${gap}_${Device.os.version}  ${Device.browser.name}${gap}_${Device.browser.version}`;
-};
-
-export const Device = {
-  os: {
-    name: 'unknow',
-    version: '0.0.0',
-  },
-  platform: {
-    name: 'unknow',
-    version: '0.0.0',
-  },
-  browser: {
-    name: 'unknow',
-    version: '0.0.0',
-  },
 };

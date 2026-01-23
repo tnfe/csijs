@@ -43,7 +43,7 @@ const limit = (keyValue) => {
       }
     }
 
-    keyValue[id] = key.substr(0, MAX_LENGTH);
+    keyValue[id] = key.substring(0, MAX_LENGTH);
   }
 
   return keyValue;
@@ -56,10 +56,13 @@ const readLines = () => {
   if (info && length) {
     const max = parseInt(info.max, 10);
     const min = parseInt(info.min, 10);
-    for (let i = min; i <= max; i++) {
-      const keyName = `${info.type}_${i}`;
-      const line = read(keyName);
-      lines.push(line);
+    // 检查 min 和 max 是否为有效数字
+    if (!isNaN(min) && !isNaN(max) && min <= max) {
+      for (let i = min; i <= max; i++) {
+        const keyName = `${info.type}_${i}`;
+        const line = read(keyName);
+        lines.push(line);
+      }
     }
   }
   return lines;

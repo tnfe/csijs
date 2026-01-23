@@ -2,11 +2,12 @@ const JsonpErr = function (forms) {
   this.forms = forms;
 };
 JsonpErr.prototype.probe = function () {
+  const that = this;
   const { createElement } = window.document;
-  window.document.createElement = (...args) => {
-    const dom = createElement.apply(this, args);
+  window.document.createElement = function (...args) {
+    const dom = createElement.apply(window.document, args);
     if (args[0] === 'script') {
-      this.addListener(dom);
+      that.addListener(dom);
     }
     return dom;
   };
@@ -14,10 +15,12 @@ JsonpErr.prototype.probe = function () {
 
 // jsonp错误或者seajs/requirejs错误
 JsonpErr.prototype.addListener = function (dom) {
+  const that = this;
   dom.onerror = (e) => {
-    this.forms.add({
+    that.forms.addLine('ERROR', {
+      etype: 'script error',
       msg: `script tag error${e}`,
-      url: dom.getAttribute('src'),
+      js: dom.getAttribute('src'),
     });
   };
 };

@@ -13,7 +13,7 @@
   </p>
 </p>
 <div align="center">
-<a href="https://www.npmjs.com/csijs" target="_blank"><img src="https://img.shields.io/npm/l/ffcreator.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/csilog" target="_blank"><img src="https://img.shields.io/npm/l/ffcreator.svg" alt="Package License" /></a>
 <a href="https://github.com/prettier/prettier" target="_blank"><img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg" alt="Code Style"></a>
 <a href="https://github.com/tnfe/csijs/pulls" target="_blank"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs"/></a>
 <a href="https://nodejs.org" target="_blank"><img src="https://img.shields.io/badge/node-%3E%3D%208.0.0-brightgreen.svg" alt="Node Version" /></a>
@@ -21,16 +21,16 @@
 <br />
 <table>
   <tr>
-    <th><h4 align="center"><h4 align="center">无入侵</h4 align="center"></th>
-    <th><h4 align="center"></h4 align="center"><h4 align="center">轻量易用</h4 align="center"></th>
-    <th><h4 align="center"></h4 align="center"><h4 align="center">功能强大</h4 align="center"></th>
-    <th><h4 align="center"></h4 align="center"><h4 align="center">高性能</h4 align="center"></th>
+    <th><h4 align="center">无入侵</h4></th>
+    <th><h4 align="center">轻量易用</h4></th>
+    <th><h4 align="center">功能强大</h4></th>
+    <th><h4 align="center">高性能</h4></th>
   </tr>
   <tr>
     <td width="20%" align="center"><sub>丢上去不管，我们承诺永不入侵你的业务！</sub></td>
     <td width="20%" align="center"><sub>兼容各种系统，不管你使用的是jQuery、angular1/2、React、Vue，都可以使用它</sub></td>
-    <td width="20%" align="center"><sub>完善的查错机制，截图预览、导出excel、直接上传到后台查看等</sub></td>
-    <td width="20%" align="center"><sub>文件超小，Gzip 5k对你几乎毫无影响</td>
+    <td width="20%" align="center"><sub>完善的查错机制，截图预览、导出txt、直接上传到后台查看等</sub></td>
+    <td width="20%" align="center"><sub>文件超小，Gzip 5k对你几乎毫无影响</sub></td>
   </tr>
 </table>
 
@@ -43,24 +43,26 @@
 
 ## 一、快速开始
 
-### 1、npm安装
-```shell script
-npm i csijs --save
-or
-yarn add csijs
+### 1. npm安装
+```shell
+npm i csilog --save
+```
+或
+```shell
+yarn add csilog
 ```
 
-### 2、使用
+### 2. 使用
 ```javascript
-import CSI from 'csijs';
+import CSI from 'csilog';
 
 // 示例：自定义上报
 const csi = new CSI({
-    feID: '', // 项目id，日志区分项目使用
-    report: (lines) =>  {
-        // todo 自定义你的上报逻辑
-        console.log('error lins', lines);
-    }, 
+  feID: '', // 项目id，日志区分项目使用
+  report: (lines) => {
+    // todo 自定义你的上报逻辑
+    console.log('error lins', lines);
+  },
 });
 
 // 如果你想主动上报
@@ -69,15 +71,16 @@ csi.report();
 
 ## 二、日志查看
 
-查看日志快捷键: Ctrl+6
+查看日志快捷键：`Ctrl+6`
 
 
 ## 三、本地开发
 
 ```shell
-// 本地开发
+# 本地开发
 npm run start
-// 发布环境
+
+# 发布环境
 npm run build
 ```
 
@@ -85,13 +88,13 @@ npm run build
 
 TNTWeb 团队会查看所有的 MR，我们会运行一些代码检查和测试，一经测试通过，我们会接受这次 MR，但不会立即发布外网，会有一些延迟。
 
-当您准备 MR 时，请确保已经完成以下几个步骤:
+当您准备 MR 时，请确保已经完成以下几个步骤：
 
-1. 将主仓库代码 Fork 到自己名下。
-1. 基于 `master` 分支创建您的开发分支。
-1. 如果您更改了 API(s) 请更新代码及文档。
-1. 检查您的代码语法及格式。
-1. 提一个 MR 到主仓库的 `master` 分支上。
+1. 将主仓库代码 Fork 到自己名下
+2. 基于 `master` 分支创建您的开发分支
+3. 如果您更改了 API(s) 请更新代码及文档
+4. 检查您的代码语法及格式
+5. 提一个 MR 到主仓库的 `master` 分支上
 
 ## 五、如何加入
 
@@ -102,4 +105,5 @@ TNTWeb 团队会查看所有的 MR，我们会运行一些代码检查和测试�
 如果您是第一次贡献代码，请阅读 [CONTRIBUTING](https://github.com/tnfe/csijs/blob/master/contribution) 了解我们的贡献流程，并提交 Merge Request 给我们。
 
 ## 六、License
+
 The MIT License (MIT). Please see [License File](https://github.com/tnfe/csijs/blob/master/LICENSE) for more information.

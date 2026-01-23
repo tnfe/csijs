@@ -39,7 +39,7 @@ const split = (str, ch) => {
     start = pos + 1;
   }
 
-  result.push(str.substr(start));
+  result.push(str.substring(start));
 
   return result;
 };
@@ -72,7 +72,7 @@ const arrIsNull = (arr) => {
   if (!arr.length) return true;
 
   let index = 0;
-  for (let i = arr.length - 1; i > 0; i--) {
+  for (let i = arr.length - 1; i >= 0; i--) {
     if (!arr[i]) {
       index += 1;
     }

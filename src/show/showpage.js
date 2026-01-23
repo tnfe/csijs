@@ -1,6 +1,6 @@
 import { readLines } from '../util/store';
 import { arrIsNull, formatTime } from '../util/util';
-import ExcellentExport from 'excellentexport';
+import { downloadTxt } from '../util/txt';
 
 function createBtn(text) {
   const btn = document.createElement('a');
@@ -141,7 +141,36 @@ ShowPage.prototype.addEventListener = function () {
   });
 
   this.btn1.addEventListener('click', () => {
-    ExcellentExport.excel(this.btn1, this.table);
+    const lines = readLines();
+    if (arrIsNull(lines)) {
+      alert('暂时没有错误信息');
+      return;
+    }
+    
+    // 生成txt内容，使用制表符作为分隔符
+    const headers = ['time', 'type', 'js', 'msg', 'UA'];
+    let content = headers.join('\t') + '\n';
+    
+    // 从最新到最旧（与表格显示顺序一致）
+    for (let i = lines.length - 1; i >= 0; i--) {
+      const line = lines[i];
+      if (!line) continue;
+      
+      const row = [
+        formatTime(line.time),
+        line.etype || '',
+        line.js || '',
+        line.msg || '',
+        line.ua || ''
+      ];
+      content += row.join('\t') + '\n';
+    }
+    
+    // 生成文件名（包含时间戳）
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, -5);
+    const filename = `csijs-log-${timestamp}.txt`;
+    
+    downloadTxt(content, filename);
   });
 
   this.btn2.addEventListener('click', () => {
